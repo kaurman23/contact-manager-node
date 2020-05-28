@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 // const date = require(__dirname + "/date.js"); Not using date to recude the complexity
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27018/contacts", { useNewUrlParser: true,useUnifiedTopology: true });
+//mongoose.connect("mongodb://localhost:27018/contacts", { useNewUrlParser: true,useUnifiedTopology: true });
 
 // const numberSchema = new mongoose.Schema({
 //   number : String
@@ -18,13 +18,6 @@ mongoose.connect("mongodb://localhost:27018/contacts", { useNewUrlParser: true,u
 //
 // const Email = mongoose.model("Email", emailSchema);
 
-const contactSchema = new mongoose.Schema({
-  name : String,
-  mobileNo : [String],
-  email: [String]
-})
-
-const Contact = mongoose.model("Contact", contactSchema);
 
 const app = express();
 
@@ -32,6 +25,17 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+
+mongoose.connect("mongodb+srv://admin-kaurman:test-123@cluster0-vxkhh.mongodb.net/contactsDB",{ useNewUrlParser: true,useUnifiedTopology: true });
+
+
+const contactSchema = new mongoose.Schema({
+  name : String,
+  mobileNo : [String],
+  email: [String]
+})
+
+const Contact = mongoose.model("Contact", contactSchema);
 
 app.get("/", function(req,res){
   Contact.find({}, function(err, foundItems){
