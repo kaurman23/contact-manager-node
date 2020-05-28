@@ -41,10 +41,12 @@ body{
 
     .nav-item {
       padding: 0 15px;
+      color: #f6acc8;
     }
 
     .nav-link {
       font-family: "Montserrat";
+
     }
 
 
@@ -74,4 +76,8 @@ form{
 }
 .add{
   border: 5px solid white;
+}
+.search-bar{
+  width: 40rem;
+  margin:auto;
 }

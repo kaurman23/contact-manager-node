@@ -75,6 +75,22 @@ app.post("/add", function(req,res){
   res.redirect("/");
 });
 
+app.post("/search", function(req,res){
+  const query = req.body.search;
+  Contact.find({name: {'$regex': query}}, function(err, findObjects){
+    if(!err)
+    {
+      if(findObjects)
+      {
+        res.render("home", {contactList: findObjects});
+      }
+      else{
+        res.render("home",);
+      }
+    }
+  });
+})
+
 app.listen(3000, function(){
   console.log("Listening");
 });

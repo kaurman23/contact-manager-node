@@ -6,8 +6,17 @@
     <h1 class="display-3">CONTACT LIST</h1>
   </div>
 
+  <form  action="/search" method="post">
+    <div class="search-bar input-group mb-4">
+                <input type="input" name="search" placeholder="Search by name" aria-describedby="button-addon5" class="form-control">
+                <div class="input-group-append">
+                  <button id="button-addon5" type="submit" class="btn btn-warning"><i class="fa fa-search"></i></button>
+                </div>
+    </div>
+  </form>
 
   <div class="card contact-list" >
+
   <ul class="list-group list-group-flush">
     <% contactList.forEach(function(item){  %>
       <li class="list-group-item list-group-item-danger"> <%= item.name %>
@@ -44,9 +53,6 @@
                 </form>
               </div>
             </div>
-
-
-
           </div>
 
         </div>
