@@ -1,9 +1,52 @@
 <%- include("header") -%>
 
-<div class="">
-  <h1 class="display-3">Contact List</h1>
-  
+<div >
+  <div class="heading">
+    <h1 class="display-1">Contact List</h1>
+  </div>
+
+
+  <div class="card" style="width: 40rem;">
+  <ul class="list-group list-group-flush">
+    <% contactList.forEach(function(item){  %>
+      <li class="list-group-item list-group-item-dark"> <%= item.name %>
+      <a class="btn btn-primary btn-sm float-right" data-toggle="collapse" href="#<%=item.name%>" role="button" aria-expanded="false" aria-controls="collapseContact">+</a>
+      </li>
+      <div class="collapse" id="<%= item.name %>">
+        <div class="card card-body">
+          <div class="contact-info row">
+            <div class="col-sm">
+              <ul class="list-group">
+              <% item.email.forEach(function(n){ %>
+                  <li class="list-group-item">📬️ <%= n %> </li>
+              <% }) %>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <ul class="list-group">
+              <% item.mobileNo.forEach(function(n){ %>
+                  <li class="list-group-item">📞️ <%= n %> </li>
+              <% }) %>
+              </ul>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-success">Edit</button>
+            <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+          </div>
+
+        </div>
+      </div>
+    <% }) %>
+  </ul>
 </div>
+
+
+
+
+</div>
+
+
 
 
 

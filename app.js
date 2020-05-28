@@ -34,9 +34,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req,res){
-  res.render("home");
-})
+  Contact.find({}, function(err, foundItems){
+    if(err){
+      console.log(Error);
+    }
+    else{
+      res.render("home",{contactList: foundItems});
+    }
+  })
 
+})
+ app.get("/add", function(req,res){
+   res.render("add-contact");
+ })
 app.post("/add", function(req,res){
   //console.log(req.body    );
   const contactName = req.body.name;
