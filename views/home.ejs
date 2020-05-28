@@ -32,10 +32,10 @@
           </div>
           <div class="btn-group">
             <form class="" action="/edit" method="post">
-              <button type="button" class="btn btn-sm btn-outline-success">Edit</button>
+              <button type="submit" name="editid" class="btn btn-sm btn-outline-success">Edit</button>
             </form>
             <form class="" action="/remove" method="post">
-              <button type="button" class="btn btn-sm btn-outline-danger" value="<%= item._id %>">Remove</button>
+              <button type="submit" name="removeid" class="btn btn-sm btn-outline-danger" value="<%= item._id %>" onchange="this.form.submit()">Remove</button>
             </form>
 
           </div>

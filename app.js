@@ -49,9 +49,17 @@ app.get("/", function(req,res){
  })
 
  app.post("/remove", function(req,res){
-   console.log(req.body);
+   const recv= req.body.removeid;
+   Contact.deleteOne({_id: recv}, function(err){
+     if(!err){
+       res.redirect("/");
+     }
+     else{
+       console.log("Oops something went wrong");
+     }
+   })
  });
- 
+
 app.post("/add", function(req,res){
   //console.log(req.body    );
   const contactName = req.body.name;
@@ -64,6 +72,7 @@ app.post("/add", function(req,res){
     email: contactEmail
   })
   newContact.save();
+  res.redirect("/");
 });
 
 app.listen(3000, function(){
