@@ -1,16 +1,17 @@
 <%- include("header") -%>
+<div class="container-fluid">
 
 <div >
   <div class="heading">
-    <h1 class="display-1">Contact List</h1>
+    <h1 class="display-3">CONTACT LIST</h1>
   </div>
 
 
-  <div class="card" style="width: 40rem;">
+  <div class="card contact-list" >
   <ul class="list-group list-group-flush">
     <% contactList.forEach(function(item){  %>
-      <li class="list-group-item list-group-item-dark"> <%= item.name %>
-      <a class="btn btn-primary btn-sm float-right" data-toggle="collapse" href="#<%=item.name%>" role="button" aria-expanded="false" aria-controls="collapseContact">+</a>
+      <li class="list-group-item list-group-item-danger"> <%= item.name %>
+      <a class="btn btn-dark btn-sm float-right" data-toggle="collapse" href="#<%=item.name%>" role="button" aria-expanded="false" aria-controls="collapseContact">+</a>
       </li>
       <div class="collapse" id="<%= item.name %>">
         <div class="card card-body">
@@ -30,13 +31,21 @@
               </ul>
             </div>
           </div>
-          <div class="btn-group">
-            <form class="" action="/edit" method="post">
-              <button type="submit" name="editid" class="btn btn-sm btn-outline-success">Edit</button>
-            </form>
-            <form class="" action="/remove" method="post">
-              <button type="submit" name="removeid" class="btn btn-sm btn-outline-danger" value="<%= item._id %>" onchange="this.form.submit()">Remove</button>
-            </form>
+          <div class="">
+            <div class="row">
+              <div class="col-sm-6">
+                <form class="" action="/edit" method="post">
+                  <button type="submit" name="editid" class="btn  btn-block btn-success">Edit</button>
+                </form>
+              </div>
+              <div class="col-sm-6">
+                <form class="" action="/remove" method="post">
+                  <button type="submit" name="removeid" class="btn btn-block btn-danger" value="<%= item._id %>" onchange="this.form.submit()">Remove</button>
+                </form>
+              </div>
+            </div>
+
+
 
           </div>
 
@@ -51,7 +60,7 @@
 
 </div>
 
-
+</div>
 
 
 

@@ -1,24 +1,77 @@
 body{
-  background-color: #E4E9FD;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+  background-color: #f6acc8;
 
+
+
+
+}
+.top{
+  background-color: #584153;
+}
+.navbar {
+      padding-bottom: 4.5rem;
+      padding-right: 0;
+      padding-left: 0;
+  }
+
+    .navbar-brand {
+      font-family: "Ubuntu";
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .nav-item {
+      padding: 0 15px;
+    }
+
+    .nav-link {
+      font-family: "Montserrat";
+    }
+    .navbar {
+      padding-bottom: 4.5rem;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .navbar-brand {
+      font-family: "Ubuntu";
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .nav-item {
+      padding: 0 15px;
+    }
+
+    .nav-link {
+      font-family: "Montserrat";
+    }
+
+
+
+form{
+  display:inline;
+}
 .add{
   margin: auto;
   width: 50%;
   padding: 50px;
 }
-
+.home{
+  display: inline-block;
+  margin-left:50%;
+  align-items: center;
+}
 .heading{
+  font-family: 'Rajdhani', sans-serif;
     margin-bottom: 30px;
+    text-align: center;
+
+}
+.contact-list{
+  width: 40rem;
+  margin:auto;
+}
+.add{
+  border: 5px solid white;
 }
