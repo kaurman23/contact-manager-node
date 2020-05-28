@@ -1,44 +1,65 @@
 <%- include("header") -%>
 
 <div class="add border border-primary">
+
+  <div class="heading text-center">
+    <h1 class="display-3">Add a contact</h1>
+  </div>
+
   <form action="/add" method="post">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" name="name" id="name"  placeholder="Name">
     </div>
 
-
     <div class="form-group">
-      <div>
-        <label for="tel">Mobile Number</label>
-        <div class="form-row ">
+      <label for="tel">Mobile Number</label>
+      <div class="element-wrapper">
+        <div class="phone-row form-row ">
           <div class="col col-md-10">
-            <input type="text" class="form-control" id="tel" name="tel" placeholder="123456789">
+            <input type="text" class="form-control" id="tel" name="tel[]" placeholder="123456789">
           </div>
           <div class="col col-md-2">
-            <button type="submit" name="list" class="button button5">+</button>
+            <button  type="button" name="list" id="a" class="btn-add-row button button5">+</button>
           </div>
         </div>
       </div>
 
     </div>
     <div class="form-group">
-      <div>
-        <label for="email">Email address</label>
-        <div class="form-row ">
+      <label for="email">Email address</label>
+      <div class="element-wrapper2">
+        <div class="email-row form-row ">
           <div class="col col-md-10">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+            <input type="email" class="form-control" id="email" name="email[]" placeholder="Enter email">
           </div>
           <div class="col col-md-2">
-            <button type="submit" name="list" class="button button5">+</button>
+            <button type="button" name="list" id="b" class="button button5">+</button>
           </div>
         </div>
       </div>
 
     </div>
       <button type="submit" class="btn btn-primary">Save</button>
+
+
   </form>
 </div>
 
+<script type="text/javascript">
+  // $(document).on("click",".btn-add-row", function(){
+
+  $( "#a" ).click(function() {
+  //alert( "Handler for .click() called." );
+  var row = $(".phone-row").clone().show();
+    $(".element-wrapper").append(row);
+});
+$( "#b" ).click(function() {
+//alert( "Handler for .click() called." );
+var row = $(".email-row").clone().show();
+  $(".element-wrapper2").append(row);
+});
+
+</script>
 
 <%- include("footer") -%>

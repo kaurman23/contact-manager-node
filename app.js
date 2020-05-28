@@ -11,7 +11,7 @@ mongoose.connect("mongodb://localhost:27018/contacts", { useNewUrlParser: true,u
 //
 // });
 // const Number = mongoose.model("Number",numberSchema );
-//
+// //
 // const emailSchema = new mongoose.Schema({
 //   email : String
 // });
@@ -47,6 +47,11 @@ app.get("/", function(req,res){
  app.get("/add", function(req,res){
    res.render("add-contact");
  })
+
+ app.post("/remove", function(req,res){
+   console.log(req.body);
+ });
+ 
 app.post("/add", function(req,res){
   //console.log(req.body    );
   const contactName = req.body.name;
@@ -55,8 +60,8 @@ app.post("/add", function(req,res){
 
   const newContact = new Contact({
     name: contactName,
-    mobileNo:[contactEmail],
-    email: [contactTel]
+    mobileNo:contactTel,
+    email: contactEmail
   })
   newContact.save();
 });

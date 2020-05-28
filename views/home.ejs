@@ -31,8 +31,13 @@
             </div>
           </div>
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-success">Edit</button>
-            <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+            <form class="" action="/edit" method="post">
+              <button type="button" class="btn btn-sm btn-outline-success">Edit</button>
+            </form>
+            <form class="" action="/remove" method="post">
+              <button type="button" class="btn btn-sm btn-outline-danger" value="<%= item._id %>">Remove</button>
+            </form>
+
           </div>
 
         </div>
